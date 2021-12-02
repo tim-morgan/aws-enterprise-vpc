@@ -126,7 +126,7 @@ resource "null_resource" "rdns-a" {
 
   # Comment this out when you really need to destroy the forwarder.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
@@ -158,7 +158,7 @@ resource "null_resource" "rdns-b" {
 
   # Comment this out when you really need to destroy the forwarder.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 

@@ -91,7 +91,7 @@ resource "aws_s3_bucket" "remote_state_bucket" {
 
   # Terraform should never destroy this resource
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
@@ -110,6 +110,6 @@ resource "aws_dynamodb_table" "lock_table" {
 
   # Terraform should never destroy this resource
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }

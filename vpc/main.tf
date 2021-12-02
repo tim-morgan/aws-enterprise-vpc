@@ -174,7 +174,7 @@ resource "aws_vpc" "vpc" {
   # if you subsequently recreate it, you will need to contact Technology
   # Services again to re-enable Enterprise Networking features for the new VPC.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
@@ -238,7 +238,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_attach" {
   # if you subsequently recreate it, you will need to contact Technology
   # Services again to reprovision the Core Services side.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
@@ -338,7 +338,7 @@ resource "null_resource" "vpn1" {
   # you subsequently recreate it, you will need to contact Technology Services
   # again to rebuild the on-campus configuration.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
@@ -373,7 +373,7 @@ resource "null_resource" "vpn2" {
   # you subsequently recreate it, you will need to contact Technology Services
   # again to rebuild the on-campus configuration.
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = var.prevent_destroy
   }
 }
 
