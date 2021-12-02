@@ -36,9 +36,11 @@ variable "customer_gateway_ids" {
     type = map
 }
 
-variable "prevent_destroy" {
-    description = "Prevents destruction of the networking resources via Terraform"
-}
+# lifecycle block doesn't allow variables
+# variable "prevent_destroy" {
+#     description = "Prevents destruction of the networking resources via Terraform"
+#     type = bool
+# }
 
 
 ## Inputs (specified in terraform.tfvars)
@@ -187,9 +189,9 @@ resource "aws_vpc" "vpc" {
   # Comment this out if you really need to destroy your entire VPC.  Note that
   # if you subsequently recreate it, you will need to contact Technology
   # Services again to re-enable Enterprise Networking features for the new VPC.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 # create the Internet Gateway
@@ -251,9 +253,9 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_attach" {
   # Comment this out if you really need to destroy the attachment.  Note that
   # if you subsequently recreate it, you will need to contact Technology
   # Services again to reprovision the Core Services side.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 locals {
@@ -351,9 +353,9 @@ resource "null_resource" "vpn1" {
   # Comment this out if you really need to destroy the VPN connection.  Note: if
   # you subsequently recreate it, you will need to contact Technology Services
   # again to rebuild the on-campus configuration.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 module "vpn2" {
@@ -386,9 +388,9 @@ resource "null_resource" "vpn2" {
   # Comment this out if you really need to destroy the VPN connection.  Note: if
   # you subsequently recreate it, you will need to contact Technology Services
   # again to rebuild the on-campus configuration.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 # accept the specified VPC Peering Connections

@@ -125,9 +125,9 @@ resource "null_resource" "rdns-a" {
   }
 
   # Comment this out when you really need to destroy the forwarder.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 module "rdns-b" {
@@ -157,9 +157,9 @@ resource "null_resource" "rdns-b" {
   }
 
   # Comment this out when you really need to destroy the forwarder.
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+#   lifecycle {
+#     prevent_destroy = var.prevent_destroy
+#   }
 }
 
 # create a DHCP Options Set
