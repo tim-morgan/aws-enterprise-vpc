@@ -160,12 +160,12 @@ output "vpc_region" {
 ## Providers
 
 # default provider for chosen region
-provider "aws" {
-  region = var.region
+# provider "aws" {
+#   region = var.region
 
-  # avoid accidentally modifying the wrong AWS account
-  allowed_account_ids = [var.account_id]
-}
+#   # avoid accidentally modifying the wrong AWS account
+#   allowed_account_ids = [var.account_id]
+# }
 
 ## Resources
 
