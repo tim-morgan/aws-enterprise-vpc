@@ -68,12 +68,6 @@ output "ipv6_addresses" {
   value = aws_instance.example.ipv6_addresses
 }
 
-## Providers
-
-provider "aws" {
-  region              = "${var.region}"
-  allowed_account_ids = [var.account_id]
-}
 
 # Get the latest Amazon Linux 2 AMI matching the specified name pattern
 
